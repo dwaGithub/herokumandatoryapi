@@ -50,7 +50,7 @@ public class Cars {
     public String patchCarById(@PathVariable Long id, @RequestBody Car carToUpdateWith){
         return cars.findById(id).map(foundCar -> {
             if(carToUpdateWith.getBrand() != null) foundCar.setBrand(carToUpdateWith.getBrand());
-            if(carToUpdateWith.getModel() !=0) foundCar.setModel(carToUpdateWith.getModel());
+            if(carToUpdateWith.getModel() != null) foundCar.setModel(carToUpdateWith.getModel());
             if(carToUpdateWith.getType() != null) foundCar.setType(carToUpdateWith.getType());
             cars.save(foundCar);
             return "Car updated";

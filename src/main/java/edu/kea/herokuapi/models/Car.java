@@ -17,7 +17,7 @@ public class Car {
     private String brand;
 
     @Column
-    private int model;
+    private String model;
 
     @Column
     private String type;
